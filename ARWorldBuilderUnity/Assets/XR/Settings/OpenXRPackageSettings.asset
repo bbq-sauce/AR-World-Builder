@@ -507,7 +507,7 @@ MonoBehaviour:
   - {fileID: -2443178984430365086}
   - {fileID: -2006736507142651691}
   customLoaderName: 
-  m_renderMode: 1
+  m_renderMode: 0
   m_latencyOptimization: 0
   m_autoColorSubmissionMode: 1
   m_colorSubmissionModes:
@@ -847,7 +847,7 @@ MonoBehaviour:
   m_multiviewRenderRegionsOptimizationMode: 0
   m_hasMigratedMultiviewRenderRegionSetting: 1
   m_foveatedRenderingApi: 0
-  m_useOpenXRPredictedTime: 0
+  m_useOpenXRPredictedTime: 1
 --- !u!114 &6241212205513391150
 MonoBehaviour:
   m_ObjectHideFlags: 0
