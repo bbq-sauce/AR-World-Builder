@@ -374,17 +374,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
   m_Padding:
-    m_Left: -280
+    m_Left: -285
     m_Right: 0
-    m_Top: -360
+    m_Top: -400
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 200, y: 200}
-  m_Spacing: {x: 1, y: 1}
-  m_Constraint: 0
-  m_ConstraintCount: 2
+  m_Spacing: {x: 0, y: 1}
+  m_Constraint: 1
+  m_ConstraintCount: 3
 --- !u!1 &606097504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,6 +1096,36 @@ MonoBehaviour:
   - displayName: Planter
     prefab: {fileID: 2735714908614775312, guid: 320f1e3b29af1ce45a8fcf3d8b63f187, type: 3}
     icon: {fileID: 1395141643, guid: f8dc253f04ea0524fb1fdb28f5bd2a2d, type: 3}
+  - displayName: fence-curved
+    prefab: {fileID: 6591512300007209360, guid: 17eda4628817a624c9dd11fb01e99e0f, type: 3}
+    icon: {fileID: -1329474968, guid: 52fbb12d16885b6478a6058c996fa0ef, type: 3}
+  - displayName: fence-gate
+    prefab: {fileID: 689146393400514069, guid: 11cd7e11859a58f4a81ccc0e93087a2c, type: 3}
+    icon: {fileID: 526158702, guid: 4528a6a12391c0142975fbe907399cfd, type: 3}
+  - displayName: fountain-round
+    prefab: {fileID: 5488369843673205907, guid: b37d1d9e6a5e0dc4ab0c83221b700891, type: 3}
+    icon: {fileID: -1347374083, guid: ed6089f87bd4e2146a26ec8f08331c20, type: 3}
+  - displayName: fountain-round2
+    prefab: {fileID: 7211846726929594480, guid: d44cbe796fe00d24c8d39f911e3f3d73, type: 3}
+    icon: {fileID: -2106924304, guid: e40861f26f31241479032c60bfbb9648, type: 3}
+  - displayName: fountain-square
+    prefab: {fileID: 4585666883646644904, guid: 359225973d2d3ee4481d8822106fd709, type: 3}
+    icon: {fileID: 1840136753, guid: bfd58da58971de6409cc09476fc04ed3, type: 3}
+  - displayName: rock-large
+    prefab: {fileID: 5386393417815551653, guid: c0c8be07fd072ae4280fd6420ef58f2e, type: 3}
+    icon: {fileID: -1926932926, guid: f3e365805abd74e4db692dc8732a4e3a, type: 3}
+  - displayName: stall-green
+    prefab: {fileID: 8635788177750383583, guid: 132e993dc37365748bab30f495d30f7b, type: 3}
+    icon: {fileID: -2101316987, guid: 2e733c683c739404784ff86657892117, type: 3}
+  - displayName: stall-red
+    prefab: {fileID: 5084633383043702369, guid: 5134d244095d3784b9f59e755f306e47, type: 3}
+    icon: {fileID: 1363904270, guid: 6e69616af3d04704ca851c48524ce42b, type: 3}
+  - displayName: tree-high
+    prefab: {fileID: 4564308277618999100, guid: b9e38a666c8b9cd49b5220dd3df662ac, type: 3}
+    icon: {fileID: 567550212, guid: 7377f855862d4ec4b88ac23692837702, type: 3}
+  - displayName: tree-large
+    prefab: {fileID: 4180249704454033916, guid: 20435dbfac4b54b47bc7899bd361562e, type: 3}
+    icon: {fileID: -1381204252, guid: a71a7b8f453065d40a066f7d6a910003, type: 3}
   sidePanel: {fileID: 1589542955}
 --- !u!4 &1128667651
 Transform:
@@ -1350,7 +1380,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1645385671
 MonoBehaviour:
@@ -1740,104 +1770,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlacementManager
   minHorizontalDot: 0.85
   reticlePrefab: {fileID: 0}
---- !u!1001 &1959506765
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1815402883944464028, guid: ce33304ac5536b94ca86d8957b047cea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815402883944464028, guid: ce33304ac5536b94ca86d8957b047cea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815402883944464028, guid: ce33304ac5536b94ca86d8957b047cea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815402883944464028, guid: ce33304ac5536b94ca86d8957b047cea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815402883944464028, guid: ce33304ac5536b94ca86d8957b047cea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815402883944464028, guid: ce33304ac5536b94ca86d8957b047cea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815402883944464028, guid: ce33304ac5536b94ca86d8957b047cea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815402883944464028, guid: ce33304ac5536b94ca86d8957b047cea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815402883944464028, guid: ce33304ac5536b94ca86d8957b047cea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815402883944464028, guid: ce33304ac5536b94ca86d8957b047cea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8433440242579774579, guid: ce33304ac5536b94ca86d8957b047cea, type: 3}
-      propertyPath: m_Name
-      value: Park_322ftx300ft
-      objectReference: {fileID: 0}
-    - target: {fileID: 8433440242579774579, guid: ce33304ac5536b94ca86d8957b047cea, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2239611038943118258, guid: ce33304ac5536b94ca86d8957b047cea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1959506768}
-  m_SourcePrefab: {fileID: 100100000, guid: ce33304ac5536b94ca86d8957b047cea, type: 3}
---- !u!1 &1959506767 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2239611038943118258, guid: ce33304ac5536b94ca86d8957b047cea, type: 3}
-  m_PrefabInstance: {fileID: 1959506765}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1959506768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1959506767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_CustomShadowLayers: 0
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
-  m_RenderingLayersMask:
-    serializedVersion: 0
-    m_Bits: 1
-  m_ShadowRenderingLayersMask:
-    serializedVersion: 0
-    m_Bits: 1
-  m_Version: 4
-  m_LightLayerMask: 1
-  m_ShadowLayerMask: 1
-  m_RenderingLayers: 1
-  m_ShadowRenderingLayers: 1
 --- !u!1 &2074655298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,4 +1921,3 @@ SceneRoots:
   - {fileID: 1128667651}
   - {fileID: 1787119291}
   - {fileID: 207522187}
-  - {fileID: 1959506765}
