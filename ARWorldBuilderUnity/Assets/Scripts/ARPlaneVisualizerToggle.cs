@@ -1,11 +1,6 @@
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
-/// <summary>
-/// Shows detected AR planes while the user is scanning.
-/// Hides plane visuals once the first object has been placed
-/// (keeps detection active; only the mesh renderer is hidden).
-/// </summary>
 [RequireComponent(typeof(ARPlaneManager))]
 public class ARPlaneVisualizerToggle : MonoBehaviour
 {
@@ -16,11 +11,8 @@ public class ARPlaneVisualizerToggle : MonoBehaviour
 
     void OnEnable() => planeManager.trackablesChanged.AddListener(OnPlanesChanged);
     void OnDisable() => planeManager.trackablesChanged.RemoveListener(OnPlanesChanged);
-
-    // Called when new planes are added/updated/removed
     private void OnPlanesChanged(ARTrackablesChangedEventArgs<ARPlane> args)
     {
-        // Make sure newly detected planes respect current visibility state
         foreach (var plane in args.added)
             SetPlaneVisible(plane, planesVisible);
     }

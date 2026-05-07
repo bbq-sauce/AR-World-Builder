@@ -1,20 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Manages an invisible world-space grid.
-/// Each cell is cellSize x cellSize units (metres in AR space).
-/// Objects reserve grid cells based on their footprint size.
-/// </summary>
 public class GridManager : MonoBehaviour
 {
     public static GridManager Instance { get; private set; }
 
     [Header("Grid Settings")]
     [Tooltip("Size of one grid cell in world units (metres).")]
-    public float cellSize = 0.1f; // 10 cm per cell
-
-    // Key = grid coordinate, Value = ID of object occupying it
+    public float cellSize = 0.1f; 
     private Dictionary<Vector2Int, string> occupiedCells = new();
 
     void Awake()
@@ -23,9 +16,6 @@ public class GridManager : MonoBehaviour
         Instance = this;
     }
 
-    // -------------------------------------------------------
-    // Convert a world position to the nearest grid coordinate
-    // -------------------------------------------------------
     public Vector2Int WorldToGrid(Vector3 worldPos)
     {
         int x = Mathf.RoundToInt(worldPos.x / cellSize);
@@ -33,17 +23,12 @@ public class GridManager : MonoBehaviour
         return new Vector2Int(x, z);
     }
 
-    // Snap a world position to the nearest grid centre
     public Vector3 SnapToGrid(Vector3 worldPos)
     {
         Vector2Int cell = WorldToGrid(worldPos);
         return new Vector3(cell.x * cellSize, worldPos.y, cell.y * cellSize);
     }
 
-    // -------------------------------------------------------
-    // Compute all cells an object would occupy given its
-    // world-space footprint (width & depth in metres).
-    // -------------------------------------------------------
     public List<Vector2Int> GetRequiredCells(Vector3 worldPos, Vector2 footprintMetres)
     {
         var cells = new List<Vector2Int>();
@@ -59,9 +44,6 @@ public class GridManager : MonoBehaviour
         return cells;
     }
 
-    // -------------------------------------------------------
-    // Check whether a placement is free
-    // -------------------------------------------------------
     public bool CanPlace(Vector3 worldPos, Vector2 footprintMetres)
     {
         foreach (var cell in GetRequiredCells(worldPos, footprintMetres))
@@ -69,18 +51,12 @@ public class GridManager : MonoBehaviour
         return true;
     }
 
-    // -------------------------------------------------------
-    // Reserve cells for a placed object
-    // -------------------------------------------------------
     public void OccupyCells(string objectId, Vector3 worldPos, Vector2 footprintMetres)
     {
         foreach (var cell in GetRequiredCells(worldPos, footprintMetres))
             occupiedCells[cell] = objectId;
     }
 
-    // -------------------------------------------------------
-    // Free cells when an object is removed
-    // -------------------------------------------------------
     public void FreeCells(string objectId)
     {
         var toRemove = new List<Vector2Int>();
@@ -90,9 +66,6 @@ public class GridManager : MonoBehaviour
             occupiedCells.Remove(cell);
     }
 
-    // -------------------------------------------------------
-    // Optional: debug draw grid in Scene view
-    // -------------------------------------------------------
 #if UNITY_EDITOR
     void OnDrawGizmos()
     {
